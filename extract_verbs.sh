@@ -12,7 +12,7 @@ fi
 # Get the Wikimedia Dump URL
 wikimediaDumpURL=$1
 # Download latest Wikipedia dump
-wget -o wikipedia-dump.xml.bz2 $wikimediaDumpURL
+wget -O wikipedia-dump.xml.bz2 $wikimediaDumpURL
 # Extract text
 bzcat wikipedia-dump.xml.bz2 | scripts/lib/WikiExtractor.py -o extracted/
 # Split extraction by article
