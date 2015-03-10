@@ -3,7 +3,6 @@
 set -e
 
 cd ..
-
 # Check if the argument is null
 if [ ! -n "$1" ] ;then
     echo "No Wikipedia dump URL entered!"
