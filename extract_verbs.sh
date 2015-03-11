@@ -64,7 +64,7 @@ case $langCode in
 		langCode="sw"
 		treeTagger="tree-tagger-swahili";;
 	*) echo "Invalid input OR Not supported language for now"
-    	;;
+    	exit;;
 esac
 # Generate the Wikipedia dump URL
 wikiDumpURL="http://download.wikimedia.org/"$langCode"wiki/latest/"$langCode"wiki-latest-pages-articles.xml.bz2"
