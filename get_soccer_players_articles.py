@@ -12,23 +12,23 @@ DEBUG = True
 
 def load_wiki_ids(filein):
     """Load soccer player articles Wiki IDs from a file.
-   
-    Keyword arguments:
-    filein -- the path of the file that stores soccer player articles Wiki IDs
+    
+    :param filein: the path of the file that stores soccer player articles Wiki IDs
+    :return: the list of soccer player articles Wiki IDs
     """
     with open(filein) as i:
         # Strip all whitespace characters from the beginning and the end of each line
-        # Retrun the list of soccer player articles Wiki IDs
+        # Return the list of soccer player articles Wiki IDs
         return [l.strip() for l in i.readlines()]
 
 
 def extract_soccer_articles(soccer_ids, corpus_dir, output_dir):
     """Extract soccer player articles out of the Wikipedia corpus.
-   
-    Keyword arguments:
-    soccer_ids -- the list of soccer player articles Wiki IDs
-    corpus_dir -- the directory path of the Widipedia corpus
-    output_dir -- the directory path to store the soccer player articles extracted out of the Wikipedia corpus
+    
+    :param soccer_ids: the list of soccer player articles Wiki IDs
+    :param corpus_dir: the directory path of the Widipedia corpus
+    :param output_dir: the directory path to store the soccer player articles extracted out of the Wikipedia corpus
+    :return: 0
     """
     # Generate the paths, subdirectories and file names in the directory tree of corpus by walking it
     for path, subdirs, files in os.walk(corpus_dir):
@@ -66,4 +66,3 @@ if __name__ == "__main__":
         ids = load_wiki_ids(sys.argv[1])
         # Extract soccer player articles out of the Wikipedia corpus
         extract_soccer_articles(ids, sys.argv[2], sys.argv[3])
-        
